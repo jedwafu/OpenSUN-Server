@@ -1,0 +1,57 @@
+<nav class="navbar navbar-expand-lg sticky-top navbar-light bg-pink p-1 pl-3 mb-3">
+  <div class="navbar-collapse">
+    <div class="navbar-nav">
+      <a class="nav-item nav-link" routerLink="/servers/add"><span
+          class="fas fa-plus-square"></span>&nbsp;<span>Dodaj</span></a>
+      <ng-container *ngIf="selectedServer">
+        <a class="nav-item nav-link" [routerLink]="'/servers/edit/' + selectedServer.id"><span
+            class="fas fa-pen-square"></span>&nbsp;<span>Edytuj</span></a>
+        <button class="btn btn-link nav-item nav-link" [swal]="deleteSwal"><span
+            class="fas fa-minus-square"></span>&nbsp;<span>Usuń</span></button>
+      </ng-container>
+    </div>
+    <div class="navbar-nav w-100"></div>
+    <div class="navbar-nav">
+      <ng-container *ngIf="selectedServer">
+        <button class="btn btn-link nav-item nav-link"><span
+            class="fas fa-square"></span>&nbsp;<span>Restart</span></button>
+      </ng-container>
+    </div>
+    <div class="navbar-nav w-100"></div>
+    <div class="navbar-nav">
+      <ng-container *ngIf="selectedServer">
+        <a class="nav-item nav-link" [routerLink]="'/servers/' + selectedServer.id" *ngIf="selectedServer"><span
+            class="fas fa-square"></span>&nbsp;<span>Szczegóły</span></a>
+      </ng-container>
+    </div>
+  </div>
+</nav>
+
+<div class="container">
+  <h5 class="mb-3">Database -> Actions</h5>
+
+  <div class="container-row">
+    <div class="card bg-dark">
+      <div class="card-body px-0">
+        <table class="table table-dark table-hover">
+          <thead>
+            <tr>
+              <th scope="col">#</th>
+              <th scope="col">Name</th>
+              <th scope="col">Description</th>
+              <th scope="col">Actions</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let action of databaseActions | async">
+              <th scope="row">{{action.id}}</th>
+              <td>{{action.name}}</td>
+              <td>{{action.description}}</td>
+              <td></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+</div>

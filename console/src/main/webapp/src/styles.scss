@@ -12,7 +12,9 @@ body {
     }
 }
 
-pre {
+pre, .stat-box {
+    font-family: SFMono-Regular,Menlo,Monaco,Consolas,"Liberation Mono","Courier New",monospace;
+    font-size: 87.5%;
     color: #cc1a62;
     background-color: #00000063;
     border: 1px solid #cc1a62;

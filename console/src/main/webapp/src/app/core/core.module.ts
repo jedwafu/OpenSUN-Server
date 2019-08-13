@@ -4,6 +4,7 @@ import { throwIfAlreadyLoaded } from 'src/app/core/guards/module-import.guard';
 import { ServerService } from 'src/app/core/services/server.service';
 import { AlertService } from 'src/app/core/services/alert.service';
 import { ConfigurationService } from 'src/app/core/services/configuration.service';
+import { DatabaseService } from './services/database.service';
 
 @NgModule({
   declarations: [],
@@ -12,6 +13,7 @@ import { ConfigurationService } from 'src/app/core/services/configuration.servic
   ],
   providers: [
     ServerService,
+    DatabaseService,
     AlertService,
     ConfigurationService
   ]
